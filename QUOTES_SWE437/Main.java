@@ -72,8 +72,10 @@ public class Main {
 					System.out.println("Quote Already Exists!: ");
 					Quote randquote = quotelist.search(Quote, 1).getQuote(0);
 					System.out.println(randquote.getQuoteText());
-					System.out.println("\t-" + randquote.getAuthor());
+					System.out.println("\t-" + randquote.getAuthor() + "\n");
+					startupMenu();
 				}
+				updatelist();
 			} else if (input.equals("E") || input.equals("e")) { // exit program
 				cont = false;
 				System.out.println("Exiting: Goodbye!");
@@ -107,6 +109,12 @@ public class Main {
 			}
 		}
 		return false;
+	}
+	
+	// to update the quotelist
+	private static void updatelist() {
+		QuoteSaxParser parser = new QuoteSaxParser("/Users/Harry/Desktop/spr18/swe437/QUOTES_SWE437/quotes.xml");
+		quotelist = parser.getQuoteList();
 	}
 
 	public static void xmlWriter(String quote, String author) throws Exception {
