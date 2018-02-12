@@ -86,4 +86,18 @@ public class QuoteList
    {
       return quoteArray.get (randomGen.nextInt (quoteArray.size()));
    }
+   
+ //1: make another quote list object
+ 	// take old quote list object with new quote list object
+ 	// take both, check for double entries, create XML file
+   
+   //merge two quote lists
+   public QuoteList merge (QuoteList list1, QuoteList list2) {
+	   list1.quoteArray.removeAll(list2.quoteArray);
+	   list1.quoteArray.addAll(list2.quoteArray);
+	   return list1;
+   }
+   
+   
+   
 }

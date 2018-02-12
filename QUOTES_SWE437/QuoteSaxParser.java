@@ -28,7 +28,4 @@ public class QuoteSaxParser {
 		return handler.getQuoteList();
 	}
 	
-	//1: make another quote list object
-	// take old quote list object with new quote list object
-	// take both, check for double entries, create XML file
 }
