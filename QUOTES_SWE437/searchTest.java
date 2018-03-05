@@ -11,7 +11,7 @@ class searchTest {
 	QuoteList returnList = new QuoteList(); // return value
 
 	int mode;
-
+	int sizeExpected;
 	/*
 	 * Test 1 needs a mode of 0 (search author), and the string should be a valid
 	 * author in the QuoteList. Test 2 needs a mode of 1 (search text), and the
@@ -27,7 +27,13 @@ class searchTest {
 		mode = 0;
 		returnList = quotes.search("Richard Nixon", mode);
 		int size = returnList.getSize();
-		assertTrue(size != 0);
+		if(size != 0) {
+			assertTrue("Search Method Author", size != 0);
+			System.out.println("TEST CASE 1 FOR: Search Author Passed");
+		} else {
+			System.out.println("TEST CASE 1 FOR: Search Author Failed");
+		}
+		
 	}
 	
 	@Test
@@ -36,7 +42,12 @@ class searchTest {
 		mode = 0;
 		returnList = quotes.search("HARVEY DENT", mode);
 		int size = returnList.getSize();
-		assertTrue(size == 0);
+		if(size == 0) {
+			assertTrue("Search Method Author", size == 0);
+			System.out.println("TEST CASE 2 FOR: Search Author Passed");
+		} else {
+			System.out.println("TEST CASE 2 FOR: Search Author Failed");
+		}
 	}
 
 	@Test
@@ -45,7 +56,12 @@ class searchTest {
 		mode = 1;
 		returnList = quotes.search("For every problem there is one solution which is simple, neat, and wrong.", mode);
 		int size = returnList.getSize();
-		assertTrue(size != 0);
+		if(size != 0) {
+			assertTrue("Search Method Text", size != 0);
+			System.out.println("TEST CASE 3 FOR: Search Text Passed");
+		} else {
+			System.out.println("TEST CASE 3 FOR: Search Text Failed");
+		}
 	}
 
 	@Test
@@ -54,7 +70,12 @@ class searchTest {
 		mode = 1;
 		returnList = quotes.search("HEHEHEHEHEH HAHAHAAHAH HAHAHA", mode);
 		int size = returnList.getSize();
-		assertTrue(size == 0);
+		if(size == 0) {
+			assertTrue("Search Method Text", size == 0);
+			System.out.println("TEST CASE 4 FOR: Search Text Passed");
+		} else {
+			System.out.println("TEST CASE 4 FOR: Search Text Failed");
+		}
 	}
 
 	
@@ -64,7 +85,13 @@ class searchTest {
 		mode = 2;
 		returnList = quotes.search("Richard Nixon", mode);
 		int size = returnList.getSize();
-		assertTrue(size != 0);
+		if(size != 0) {
+			assertTrue("Search Method General",size != 0);
+			System.out.println("TEST CASE 5 FOR: Search General Passed");
+		} else {
+			System.out.println("TEST CASE 5 FOR: Search General Failed");
+		}
+		
 	}
 
 	
@@ -74,7 +101,12 @@ class searchTest {
 		mode = 2;
 		returnList = quotes.search("Don't tell me how hard you work. Tell me how much you get done.", mode);
 		int size = returnList.getSize();
-		assertTrue(size != 0);
+		if(size != 0) {
+			assertTrue("Search Method General", size != 0);
+			System.out.println("TEST CASE 6 FOR: Search General Passed");
+		} else {
+			System.out.println("TEST CASE 6 FOR: Search General Failed");
+		}
 	}
 	
 	@Test
@@ -83,7 +115,12 @@ class searchTest {
 		mode = 2;
 		returnList = quotes.search("Magic is in the air", mode);
 		int size = returnList.getSize();
-		assertTrue(size == 0);
+		if(size == 0) {
+			assertTrue("Search Method General" , size == 0);
+			System.out.println("TEST CASE 7 FOR: Search General Passed");
+		} else {
+			System.out.println("TEST CASE 7 FOR: Search General Failed");
+		}
 	}
 	
 	@Test
@@ -92,7 +129,12 @@ class searchTest {
 		mode = 2;
 		returnList = quotes.search("mike mickey", mode);
 		int size = returnList.getSize();
-		assertTrue(size == 0);
+		if(size == 0) {
+			assertTrue("Search Method General", size == 0);
+			System.out.println("TEST CASE 8 FOR: Search General Passed");
+		} else {
+			System.out.println("TEST CASE 8 FOR: Search General Failed");
+		}
 	}
 	
 }

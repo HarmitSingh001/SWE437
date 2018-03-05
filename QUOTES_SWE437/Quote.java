@@ -11,7 +11,9 @@ public class Quote
 {
    private String author;
    private String quoteText;
-
+   @SuppressWarnings("unused")
+   private String keyword; //added for keywords
+   
    // Default constructor does nothing
    public Quote ()
    {
@@ -22,6 +24,7 @@ public class Quote
    {
       this.author = author;
       this.quoteText = quoteText;
+      this.keyword = getKeyword(quoteText);
    }
 
    // Getter and setter for author
@@ -44,9 +47,18 @@ public class Quote
       this.quoteText = quoteText;
    }
 
+   // keyword calculation
+   public String getKeyword(String quoteText) {
+	   String keywordarr[] = quoteText.split(" ");
+	   int middle = keywordarr.length/2;
+	   return keywordarr[middle];
+   }
+   
+   
    @Override
    public String toString ()
    {
       return "Quote {" + "author='" + author + '\'' + ", quoteText='" + quoteText + '\'' + '}';
    }
+
 }

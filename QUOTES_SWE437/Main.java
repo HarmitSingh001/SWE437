@@ -76,6 +76,12 @@ public class Main {
 					startupMenu();
 				}
 				updatelist();
+			} else if (input.equals("K") || input.equals("k")) { // keyword search
+				System.out.println("Input the Keyword to search for: ");
+				String keyword = next.nextLine();
+				
+				
+				
 			} else if (input.equals("E") || input.equals("e")) { // exit program
 				cont = false;
 				System.out.println("Exiting: Goodbye!");
@@ -95,8 +101,9 @@ public class Main {
 		System.out.println("To get another Quote enter: Q or q");
 		System.out.println("To search for an Author enter: A or a");
 		System.out.println("To search for a Quote enter: S or s");
-		System.out.println("To do a general Search enter: G or g");
+		System.out.println("To do a General Search enter: G or g");
 		System.out.println("To add another Quote enter: D or d");
+		System.out.println("To do a Keyword Search enter: K or k" );
 		System.out.println("To Exit enter: E or e");
 	}
 	
