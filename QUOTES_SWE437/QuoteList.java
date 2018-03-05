@@ -16,6 +16,8 @@ public class QuoteList
    /* package */ static final int SearchAuthorVal = 0;
    /* package */ static final int SearchTextVal   = 1;
    /* package */ static final int SearchBothVal   = 2;
+   
+   static final int SearchKeywordVal = 3; // keyword search value added
 
    // For returning a random quote
    private Random randomGen;
@@ -73,6 +75,9 @@ public class QuoteList
          {  // Found a matching author or quote, save it
             // System.out.println ("Matched Both ");
             returnQuote.setQuote (quote);
+         }else if ((mode == SearchKeywordVal) && (quote.getKeyword().toLowerCase().equals(searchString.toLowerCase()))) {
+        	 	// Found a matching keyword, save it
+        	 	returnQuote.setQuote (quote);
          }
       }
       return returnQuote;
@@ -97,7 +102,5 @@ public class QuoteList
 	   list1.quoteArray.addAll(list2.quoteArray);
 	   return list1;
    }
-   
-   
    
 }
